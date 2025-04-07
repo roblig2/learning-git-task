@@ -5,10 +5,12 @@ shopping_list = {
 
 print("Lista zakupów")
 
+total_products = 0
+
 for shop, products in shopping_list.items():
     shop = shop.capitalize()
     products = [product.capitalize() for product in products]
+    total_products += len(products)
     print(f"Idę do {shop}, kupuję tu następujące rzeczy: {products}.")
 
-products_qty = sum(len(produkty) for produkty in shopping_list.values())
-print(f"W sumie kupuję {products_qty} produktów.")
+print(f"W sumie kupuję {total_products} produktów.")
